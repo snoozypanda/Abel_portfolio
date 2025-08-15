@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abel Adamu Shumet - Junior Data Scientist Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a'
+                        },
+                        secondary: {
+                            500: '#06b6d4',
+                            600: '#0891b2',
+                            700: '#0e7490'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-sans bg-slate-50 text-slate-700">
+
+    <!-- @COMPONENT: NavigationBar [fixed header with smooth scroll links] -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50 border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="font-bold text-xl text-slate-900">Abel Adamu</div>
+                
+                <!-- Mobile menu button -->
+                <button class="md:hidden p-2 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100" data-event="click:toggleMobileMenu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <!-- Desktop navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-slate-600 hover:text-primary-600 transition-colors duration-200">Home</a>
+                    <a href="#about" class="nav-link text-slate-600 hover:text-primary-600 transition-colors duration-200">About</a>
+                    <a href="#skills" class="nav-link text-slate-600 hover:text-primary-600 transition-colors duration-200">Skills</a>
+                    <a href="#projects" class="nav-link text-slate-600 hover:text-primary-600 transition-colors duration-200">Projects</a>
+                    <a href="#experience" class="nav-link text-slate-600 hover:text-primary-600 transition-colors duration-200">Experience</a>
+                    <a href="#contact" class="nav-link text-slate-600 hover:text-primary-600 transition-colors duration-200">Contact</a>
+                </div>
+            </div>
+            
+            <!-- Mobile navigation -->
+            <div class="md:hidden hidden mobile-menu" data-state="closed">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-slate-200">
+                    <a href="#home" class="block px-3 py-2 text-slate-600 hover:text-primary-600">Home</a>
+                    <a href="#about" class="block px-3 py-2 text-slate-600 hover:text-primary-600">About</a>
+                    <a href="#skills" class="block px-3 py-2 text-slate-600 hover:text-primary-600">Skills</a>
+                    <a href="#projects" class="block px-3 py-2 text-slate-600 hover:text-primary-600">Projects</a>
+                    <a href="#experience" class="block px-3 py-2 text-slate-600 hover:text-primary-600">Experience</a>
+                    <a href="#contact" class="block px-3 py-2 text-slate-600 hover:text-primary-600">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: NavigationBar -->
+
+    <!-- @COMPONENT: HeroSection [main introduction banner with profile image and CTA] -->
+    <section id="home" class="pt-16 min-h-screen flex items-center bg-gradient-to-br from-slate-50 via-blue-50/30 to-cyan-50/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1 text-center lg:text-left">
+                    <h1 class="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
+                        Hi, I'm <span class="text-primary-600">Abel Adamu</span>
+                    </h1>
+                    <h2 class="text-xl md:text-2xl text-slate-600 mb-6 font-light">
+                        Junior Data Scientist & AI Enthusiast
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-8 max-w-2xl">
+                        Passionate about transforming data into actionable insights. Specialized in machine learning, 
+                        NLP, and AI-driven solutions with hands-on experience in finance, security, and energy sectors.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+                        <a href="#projects" class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl">
+                            View My Work
+                        </a>
+                        <button class="border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200" data-event="click:downloadCV">
+                            <i class="fas fa-download mr-2"></i>Download CV
+                        </button>
+                    </div>
+                    
+                    <div class="flex items-center gap-6 justify-center lg:justify-start">
+                        <div class="flex items-center text-slate-600">
+                            <i class="fas fa-map-marker-alt mr-2 text-primary-600"></i>
+                            <span>Bahir Dar, Ethiopia</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="mailto:abeladamushumet@gmail.com" class="text-slate-400 hover:text-primary-600 transition-colors">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </a>
+                            <a href="#" class="text-slate-400 hover:text-primary-600 transition-colors" data-mock="true">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                            <a href="#" class="text-slate-400 hover:text-primary-600 transition-colors" data-mock="true">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 lg:order-2 flex justify-center">
+                    <!-- Professional headshot using Pravatar API as specified -->
+                    <div class="relative">
+                        <div class="w-80 h-80 rounded-full bg-gradient-to-br from-primary-400 to-secondary-500 p-1 shadow-2xl">
+                            <img src="https://i.pravatar.cc/400?u=abeladamushumet@gmail.com" 
+                                 alt="Abel Adamu Shumet - Professional Profile Photo" 
+                                 class="w-full h-full rounded-full object-cover bg-white" 
+                                 data-mock-image="true" />
+                        </div>
+                        <!-- Background accent -->
+                        <div class="absolute -z-10 top-8 left-8 w-80 h-80 bg-primary-200/30 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- @COMPONENT: AboutSection [detailed professional summary and background] -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">About Me</h2>
+                <div class="w-24 h-1 bg-primary-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <!-- Modern tech office environment as requested -->
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                         alt="Modern tech office environment with laptops and data displays" 
+                         class="rounded-xl shadow-lg w-full h-auto" />
+                </div>
+                
+                <div class="space-y-6">
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        I am a passionate and detail-oriented Junior Data Scientist specializing in machine learning, 
+                        data analysis, and AI-driven solutions. My expertise lies in developing predictive models, 
+                        performing in-depth data analysis, and delivering actionable insights.
+                    </p>
+                    
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        I have worked on multiple real-world projects through 10 Academy and industry internships, 
+                        gaining hands-on experience in finance, security, energy, and NLP applications.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 pt-6">
+                        <div class="text-center p-6 bg-slate-50 rounded-lg">
+                            <h3 class="text-2xl font-bold text-primary-600 mb-2">6+</h3>
+                            <p class="text-slate-600">Projects Completed</p>
+                        </div>
+                        <div class="text-center p-6 bg-slate-50 rounded-lg">
+                            <h3 class="text-2xl font-bold text-primary-600 mb-2">2+</h3>
+                            <p class="text-slate-600">Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AboutSection -->
+
+    <!-- @COMPONENT: SkillsSection [categorized technical skills display] -->
+    <section id="skills" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Technical Skills</h2>
+                <div class="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    Comprehensive toolkit for data science, machine learning, and AI development
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-primary-600 text-3xl mb-4">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">Programming & Data Tools</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-primary-600 rounded-full mr-3"></span>
+                            <span class="text-slate-600">Python (Pandas, NumPy, Scikit-learn)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-primary-600 rounded-full mr-3"></span>
+                            <span class="text-slate-600">TensorFlow, PyTorch</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-primary-600 rounded-full mr-3"></span>
+                            <span class="text-slate-600">SQL, R</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-secondary-600 text-3xl mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">EDA & Visualization</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-secondary-600 rounded-full mr-3"></span>
+                            <span class="text-slate-600">Matplotlib, Seaborn</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-secondary-600 rounded-full mr-3"></span>
+                            <span class="text-slate-600">Plotly</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-secondary-600 rounded-full mr-3"></span>
+                            <span class="text-slate-600">Data Analysis</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-emerald-600 text-3xl mb-4">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">Specializations</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-emerald-600 rounded-full mr-3"></span>
+                            <span class="text-slate-600">Natural Language Processing</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-emerald-600 rounded-full mr-3"></span>
+                            <span class="text-slate-600">Time Series Forecasting</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-emerald-600 rounded-full mr-3"></span>
+                            <span class="text-slate-600">Computer Vision</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-purple-600 text-3xl mb-4">
+                        <i class="fas fa-git-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">Version Control</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+                            <span class="text-slate-600">Git</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+                            <span class="text-slate-600">GitHub</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+                            <span class="text-slate-600">DVC</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-orange-600 text-3xl mb-4">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">Deployment</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-orange-600 rounded-full mr-3"></span>
+                            <span class="text-slate-600">FastAPI</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-orange-600 rounded-full mr-3"></span>
+                            <span class="text-slate-600">Docker</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-orange-600 rounded-full mr-3"></span>
+                            <span class="text-slate-600">Streamlit</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-red-600 text-3xl mb-4">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">AI & ML</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
+                            <span class="text-slate-600">Machine Learning</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
+                            <span class="text-slate-600">Deep Learning</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
+                            <span class="text-slate-600">RAG Systems</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: SkillsSection -->
+
+    <!-- @COMPONENT: ProjectsSection [showcase of completed projects in card layout] -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Featured Projects</h2>
+                <div class="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    Real-world applications of data science and machine learning across various industries
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: projects.map(project => ( -->
+                <div class="bg-slate-50 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2">
+                    <!-- Data visualization charts as requested -->
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="Data visualization dashboard showing analytics charts and graphs" 
+                         class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-2">Intelligent Complaint Analysis</h3>
+                        <p class="text-slate-600 mb-4">
+                            Developed a RAG chatbot for customer complaint analysis using NLP techniques for topic extraction and sentiment analysis.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary-100 text-primary-700 text-sm rounded-full">NLP</span>
+                            <span class="px-3 py-1 bg-primary-100 text-primary-700 text-sm rounded-full">RAG</span>
+                            <span class="px-3 py-1 bg-primary-100 text-primary-700 text-sm rounded-full">Streamlit</span>
+                        </div>
+                        <a href="#" class="text-primary-600 hover:text-primary-700 font-semibold flex items-center" data-mock="true">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-50 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2">
+                    <!-- Data visualization charts as requested -->
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="Financial data charts and fraud detection analytics on computer screens" 
+                         class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-2">Credit Card Fraud Detection</h3>
+                        <p class="text-slate-600 mb-4">
+                            Built ML model for fraudulent transaction detection with 99%+ recall using SMOTE oversampling and Random Forest.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-secondary-100 text-secondary-700 text-sm rounded-full">ML</span>
+                            <span class="px-3 py-1 bg-secondary-100 text-secondary-700 text-sm rounded-full">SMOTE</span>
+                            <span class="px-3 py-1 bg-secondary-100 text-secondary-700 text-sm rounded-full">Random Forest</span>
+                        </div>
+                        <a href="#" class="text-primary-600 hover:text-primary-700 font-semibold flex items-center" data-mock="true">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-50 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2">
+                    <!-- Data visualization charts as requested -->
+                    <img src="https://images.unsplash.com/photo-1590479773265-7464e5d48118?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="Business analytics dashboard with risk assessment charts and metrics" 
+                         class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-2">Credit Risk Probability Model</h3>
+                        <p class="text-slate-600 mb-4">
+                            Designed credit risk scoring system using RFM analysis with logistic regression and gradient boosting models.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-emerald-100 text-emerald-700 text-sm rounded-full">Risk Analysis</span>
+                            <span class="px-3 py-1 bg-emerald-100 text-emerald-700 text-sm rounded-full">FastAPI</span>
+                            <span class="px-3 py-1 bg-emerald-100 text-emerald-700 text-sm rounded-full">RFM</span>
+                        </div>
+                        <a href="#" class="text-primary-600 hover:text-primary-700 font-semibold flex items-center" data-mock="true">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-50 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2">
+                    <!-- Professional data scientist workspace as requested -->
+                    <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="Data scientist workspace with multiple monitors showing insurance analytics" 
+                         class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-2">Insurance Risk Analytics</h3>
+                        <p class="text-slate-600 mb-4">
+                            Conducted EDA and built predictive models for insurance claims data to optimize premium pricing strategies.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full">Insurance</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full">EDA</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full">DVC</span>
+                        </div>
+                        <a href="#" class="text-primary-600 hover:text-primary-700 font-semibold flex items-center" data-mock="true">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-50 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2">
+                    <!-- Professional data scientist workspace as requested -->
+                    <img src="https://pixabay.com/get/gb80498c86e77f21de6136dcd68777cb9f6f97f84d7bfe7ab58e6ee7c453e71d279875268307d254e9dc996f7c02777bcb17f211e367dd8f90d32eb8786e9727a_1280.jpg" 
+                         alt="Time series analysis workspace with oil price forecasting charts" 
+                         class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-2">Brent Oil Price Analysis</h3>
+                        <p class="text-slate-600 mb-4">
+                            Performed time series change point detection to identify significant shifts in Brent oil prices and market regimes.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-orange-100 text-orange-700 text-sm rounded-full">Time Series</span>
+                            <span class="px-3 py-1 bg-orange-100 text-orange-700 text-sm rounded-full">Change Point</span>
+                            <span class="px-3 py-1 bg-orange-100 text-orange-700 text-sm rounded-full">Visualization</span>
+                        </div>
+                        <a href="#" class="text-primary-600 hover:text-primary-700 font-semibold flex items-center" data-mock="true">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-50 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2">
+                    <!-- Professional data scientist workspace as requested -->
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="Financial portfolio optimization workspace with stock market data analysis" 
+                         class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-2">Portfolio Forecasting & Optimization</h3>
+                        <p class="text-slate-600 mb-4">
+                            Predicted stock prices using ARIMA and LSTM models, with LSTM achieving 12% better forecast accuracy.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-red-100 text-red-700 text-sm rounded-full">LSTM</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-700 text-sm rounded-full">ARIMA</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-700 text-sm rounded-full">Portfolio</span>
+                        </div>
+                        <a href="#" class="text-primary-600 hover:text-primary-700 font-semibold flex items-center" data-mock="true">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-8 py-3 border border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white rounded-lg font-semibold transition-all duration-200" data-mock="true">
+                    View All Projects <i class="fas fa-external-link-alt ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ProjectsSection -->
+
+    <!-- @COMPONENT: ExperienceSection [timeline of work experience] -->
+    <section id="experience" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Work Experience</h2>
+                <div class="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    Professional journey in data science and AI development
+                </p>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-full bg-primary-200"></div>
+                
+                <div class="space-y-12">
+                    <div class="relative flex items-start">
+                        <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-primary-600 rounded-full border-4 border-white shadow-lg flex items-center justify-center">
+                            <div class="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        
+                        <div class="ml-16 md:ml-0 md:w-1/2 md:pr-8">
+                            <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                                <div class="flex items-center mb-2">
+                                    <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm font-semibold">
+                                        Jun 2025 - Present
+                                    </span>
+                                </div>
+                                <h3 class="text-xl font-semibold text-slate-900 mb-1">Data Science Intern</h3>
+                                <p class="text-primary-600 font-medium mb-3">Information Network Security Agency (INSA)</p>
+                                <p class="text-slate-600 mb-3">Addis Ababa, Ethiopia</p>
+                                <ul class="space-y-2 text-slate-600">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-primary-600 mt-1 mr-2 flex-shrink-0"></i>
+                                        <span>Developed computer vision solutions for object detection in security imagery</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-primary-600 mt-1 mr-2 flex-shrink-0"></i>
+                                        <span>Built Amharic speech-to-text NLP models for audio transcription</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-primary-600 mt-1 mr-2 flex-shrink-0"></i>
+                                        <span>Conducted EDA and model optimization for improved accuracy</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative flex items-start">
+                        <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-secondary-600 rounded-full border-4 border-white shadow-lg flex items-center justify-center">
+                            <div class="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        
+                        <div class="ml-16 md:ml-0 md:w-1/2 md:pl-8 md:ml-auto">
+                            <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                                <div class="flex items-center mb-2">
+                                    <span class="bg-secondary-100 text-secondary-700 px-3 py-1 rounded-full text-sm font-semibold">
+                                        May 2025 - Present
+                                    </span>
+                                </div>
+                                <h3 class="text-xl font-semibold text-slate-900 mb-1">Data Science Trainee</h3>
+                                <p class="text-secondary-600 font-medium mb-3">10 Academy</p>
+                                <p class="text-slate-600 mb-3">Remote</p>
+                                <ul class="space-y-2 text-slate-600">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-secondary-600 mt-1 mr-2 flex-shrink-0"></i>
+                                        <span>Built portfolio forecasting systems using ARIMA and LSTM models</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-secondary-600 mt-1 mr-2 flex-shrink-0"></i>
+                                        <span>Designed NER models for Amharic e-commerce data</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-secondary-600 mt-1 mr-2 flex-shrink-0"></i>
+                                        <span>Deployed solutions with FastAPI & Docker</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ExperienceSection -->
+
+    <!-- @COMPONENT: CertificationsSection [display of professional certifications] -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Certifications</h2>
+                <div class="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    Continuous learning and professional development achievements
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-primary-50 to-primary-100 p-8 rounded-xl border border-primary-200">
+                    <div class="text-primary-600 text-4xl mb-4">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-2">Machine Learning for Data Science Projects</h3>
+                    <p class="text-primary-600 font-medium">April 17, 2025</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-secondary-50 to-secondary-100 p-8 rounded-xl border border-secondary-200">
+                    <div class="text-secondary-600 text-4xl mb-4">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-2">Artificial Intelligence Fundamentals</h3>
+                    <p class="text-secondary-600 font-medium">February 11, 2025</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 p-8 rounded-xl border border-emerald-200">
+                    <div class="text-emerald-600 text-4xl mb-4">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-2">Data Analysis Fundamentals</h3>
+                    <p class="text-emerald-600 font-medium">November 1, 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- @COMPONENT: ContactSection [contact form and downloadable CV functionality] -->
+    <section id="contact" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Get In Touch</h2>
+                <div class="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    Let's discuss how we can work together to transform your data into actionable insights
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div>
+                    <!-- Modern tech office environment as requested -->
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                         alt="Modern collaborative tech office environment with team working on data projects" 
+                         class="rounded-xl shadow-lg w-full h-auto mb-8" />
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-envelope text-primary-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold text-slate-900">Email</h3>
+                                <p class="text-slate-600" data-bind="contact.email">abeladamushumet@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-phone text-primary-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold text-slate-900">Phone</h3>
+                                <p class="text-slate-600">(+251) 963 437 349</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-primary-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold text-slate-900">Location</h3>
+                                <p class="text-slate-600">Bahir Dar, Ethiopia</p>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-6">
+                            <h3 class="text-lg font-semibold text-slate-900 mb-4">Connect with me</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-lg flex items-center justify-center transition-colors duration-200" data-mock="true">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 bg-slate-800 hover:bg-slate-900 text-white rounded-lg flex items-center justify-center transition-colors duration-200" data-mock="true">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 bg-secondary-600 hover:bg-secondary-700 text-white rounded-lg flex items-center justify-center transition-colors duration-200" data-mock="true">
+                                    <i class="fab fa-telegram"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-6">
+                            <button class="w-full bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center" data-event="click:downloadCV" data-implementation="Generate and download PDF CV from resume data">
+                                <i class="fas fa-download mr-3"></i>Download Full CV
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <h3 class="text-2xl font-semibold text-slate-900 mb-6">Send Message</h3>
+                    <form class="space-y-6" data-implementation="Should integrate with email service or contact API">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Name</label>
+                            <input type="text" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors" placeholder="Your full name" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors" placeholder="your@email.com" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Subject</label>
+                            <input type="text" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors" placeholder="Subject of your message" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Message</label>
+                            <textarea rows="5" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors resize-none" placeholder="Tell me about your project or opportunity..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary-600 hover:bg-primary-700 text-white py-3 rounded-lg font-semibold transition-colors duration-200" data-event="click:handleContactSubmit" data-implementation="Should validate and send contact form">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ContactSection -->
+
+    <!-- @COMPONENT: Footer [copyright and additional links] -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-4">Abel Adamu Shumet</h3>
+                <p class="text-slate-400 mb-6">Junior Data Scientist & AI Enthusiast</p>
+                
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="mailto:abeladamushumet@gmail.com" class="text-slate-400 hover:text-white transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors" data-mock="true">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors" data-mock="true">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors" data-mock="true">
+                        <i class="fab fa-telegram text-xl"></i>
+                    </a>
+                </div>
+                
+                <div class="border-t border-slate-800 pt-6">
+                    <p class="text-slate-400 text-sm">
+                        © 2025 Abel Adamu Shumet. All rights reserved. Built with modern web technologies.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // TODO: Implement business logic, API calls, or state management
+        (function() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.querySelector('[data-event="click:toggleMobileMenu"]');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    const isOpen = mobileMenu.getAttribute('data-state') === 'open';
+                    if (isOpen) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.setAttribute('data-state', 'closed');
+                    } else {
+                        mobileMenu.classList.remove('hidden');
+                        mobileMenu.setAttribute('data-state', 'open');
+                    }
+                });
+            }
+
+            // CV Download functionality
+            document.querySelectorAll('[data-event="click:downloadCV"]').forEach(button => {
+                button.addEventListener('click', function() {
+                    // TODO: Implement actual CV generation and download
+                    alert('CV download functionality would be implemented here. This would generate a PDF resume from the profile data.');
+                });
+            });
+
+            // Contact form submission
+            const contactForm = document.querySelector('form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement contact form submission
+                    alert('Contact form submission would be implemented here. This would send the message to Abel\'s email.');
+                });
+            }
+
+            // Add active state to navigation links on scroll
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section[id]');
+                const navLinks = document.querySelectorAll('.nav-link');
+                
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    if (sectionTop <= 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('text-primary-600');
+                    link.classList.add('text-slate-600');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.remove('text-slate-600');
+                        link.classList.add('text-primary-600');
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
