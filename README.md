@@ -22,7 +22,7 @@ This is a personal portfolio web application for Abel Adamu Shumet, built with R
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/abeladamushumet/abel-portfolio.git
+   git clone https://github.com/snoozypanda/Abel_portfolio
    cd abel-portfolio
    ```
 
