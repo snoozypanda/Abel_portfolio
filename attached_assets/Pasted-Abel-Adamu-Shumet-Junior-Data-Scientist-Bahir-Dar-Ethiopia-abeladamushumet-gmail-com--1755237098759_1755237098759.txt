@@ -1,0 +1,120 @@
+Abel Adamu Shumet
+
+Junior Data Scientist
+
+📍 Bahir Dar, Ethiopia
+📧 abeladamushumet@gmail.com | 📱 (+251) 963 437 349
+🔗 LinkedIn | GitHub
+
+About Me
+
+I am a passionate and detail-oriented Junior Data Scientist specializing in machine learning, data analysis, and AI-driven solutions. My expertise lies in developing predictive models, performing in-depth data analysis, and delivering actionable insights.
+I have worked on multiple real-world projects through 10 Academy and industry internships, gaining hands-on experience in finance, security, energy, and NLP applications.
+
+Skills
+
+Programming & Data Tools:
+Python (Pandas, NumPy, Scikit-learn, TensorFlow, PyTorch), SQL, R
+EDA & Visualization: Matplotlib, Seaborn, Plotly
+Version Control: Git, GitHub
+Other: NLP, Time Series Forecasting, Computer Vision
+
+Projects
+1. Intelligent Complaint Analysis
+
+🔗 GitHub Repository
+
+Developed a Retrieval-Augmented Generation (RAG) chatbot to analyze customer complaints for financial services.
+
+Integrated NLP techniques for topic extraction, sentiment analysis, and intelligent search across large datasets.
+
+Built an interactive user interface using Streamlit for customer service teams.
+
+2. Credit Card Fraud Detection
+
+🔗 GitHub Repository
+
+Built a machine learning model to detect fraudulent transactions with high recall for imbalanced datasets.
+
+Applied SMOTE oversampling and Random Forest classification to improve fraud detection rates.
+
+Achieved a recall of over 99% for fraudulent transactions.
+
+3. Credit Risk Probability Model
+
+🔗 GitHub Repository
+
+Designed a credit risk scoring system using alternative behavioral data (RFM analysis from eCommerce).
+
+Implemented logistic regression and gradient boosting models for risk prediction.
+
+Delivered a FastAPI-based deployment for real-time scoring.
+
+4. Insurance Risk Analytics
+
+🔗 GitHub Repository
+
+Conducted exploratory data analysis and hypothesis testing on insurance claims data.
+
+Built predictive models to estimate claim severity and optimize premium pricing.
+
+Applied DVC for version control and reproducibility of data pipelines.
+
+5. Brent Oil Price Change Point Analysis
+
+🔗 GitHub Repository
+
+Performed time series change point detection to identify significant shifts in Brent oil prices.
+
+Used ruptures and statistical tests to pinpoint market regime changes.
+
+Created visual dashboards to communicate insights.
+
+6. Portfolio Forecasting & Optimization
+
+🔗 GitHub Repository
+
+Predicted stock prices for TSLA, SPY, and BND using ARIMA and LSTM models.
+
+Built a portfolio optimization framework to maximize returns and minimize volatility.
+
+LSTM outperformed ARIMA by 12% in forecast accuracy.
+
+Work Experience
+
+Data Science Intern – Information Network Security Agency (INSA) – Addis Ababa, Ethiopia (Jun 2025 – Present)
+
+Developed computer vision solutions for object detection in security-related imagery, improving automated threat recognition.
+
+Built Amharic speech-to-text NLP models for transcribing and analyzing audio data, enhancing multilingual accessibility.
+
+Conducted EDA, data preprocessing, and model optimization to improve system accuracy and performance.
+
+Collaborated with multidisciplinary teams to deploy AI-driven solutions into operational environments.
+
+Data Science Trainee – 10 Academy – Remote (May 2025 – Present)
+
+Built portfolio forecasting & optimization systems using ARIMA and LSTM models.
+
+Designed NER models for Amharic e-commerce data and deployed solutions with FastAPI & Docker.
+
+Delivered high-quality reports simulating real-world consulting workflows.
+
+Certifications
+
+Machine Learning for Data Science Projects – April 17, 2025
+
+Artificial Intelligence Fundamentals – February 11, 2025
+
+Data Analysis Fundamentals – November 1, 2024
+
+
+Contact info:
+
+Email: abeladamushumet@gmail.com
+
+Telegram: @ab_el_16
+
+GitHub: github.com/abeladamushumet
+
+LinkedIn: linkedin.com/in/abeladamushumet
