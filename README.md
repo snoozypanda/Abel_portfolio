@@ -1,4 +1,5 @@
-# Abel Portfolio
+#
+Portfolio
 
 This is a personal portfolio web application for Abel Adamu Shumet, built with React and TypeScript.
 
